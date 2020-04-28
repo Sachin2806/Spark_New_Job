@@ -10,16 +10,7 @@ object Program8 {
   
   def main(args: Array[String]){
    
-  
-//    val spark  = SparkSession
-//                 .builder()
-//                 .appName("Spark Hive Example")
-//                 .config("spark.master", "local")
-//                 .config("spark.sql.warehouse.dir", "file:/C:/Windows/system32/spark-warehouse")
-//                 .enableHiveSupport()
-//                 .getOrCreate()
-                 
-    val spark = SparkSession.builder()
+  val spark = SparkSession.builder()
                             .appName("Spark Hive Example")
                             .master("local[*]")
                             .config("spark.sql.warehouse.dir", "file:C:/Users/CSC/Project_Space/SparkHiveDemo/spark-warehouse")
@@ -38,8 +29,6 @@ object Program8 {
     val testdf = Seq(("Word1", 1), ("Word4", 4), ("Word8", 8)).toDF;
     testdf.show;
     testdf.write.mode("overwrite").saveAsTable("WordCount");
-    
-    
     
     }
 }
